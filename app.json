@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sorteados",
-    "slug": "sorteados",
+    "name": "AppSorteio",
+    "slug": "AppSorteio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
