@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, TextInput, Modal } from 'react-native';
-import { useState } from 'react'; 
+import { useState } from 'react';
 import DefaultButton from '../component/DefaultButton';
 import sorteioNumero from '../classes/sorteioNumero';//importa as classes
 
-export default function ScreenNumber() { 
+export default function ScreenNumber() {
   const [quantidade, setQuantidade] = useState(0) // armazena a quantidade de participantes
   const [num, setNum] = useState() // armazena o número sorteado
   const [modalVisible, setModalVisible] = useState(false)
@@ -20,24 +20,18 @@ export default function ScreenNumber() {
 
   }
 
-  function salvar(){
+  function salvar() {
     if (titulo == '') {
       alert('Por favor informe o título')
       return
     }
-    const valor = new sorteioNumero(titulo,num, quantidade)
-    const save =[...dados,valor]
+    const valor = new sorteioNumero(titulo, num, quantidade)
+    const save = [...dados, valor]
     setDados(save)
-   
+
     alert('Salvo!')
     setModalVisible(!modalVisible)
   }
-
- console.log(dados)
-
-
-
-
 
   return (
     <View style={styles.container}>
@@ -52,7 +46,7 @@ export default function ScreenNumber() {
           placeholderTextColor="#B6B6B6"
           keyboardType='numeric'
           onChangeText={setQuantidade}
-          
+
         />
       </View>
 
@@ -60,7 +54,7 @@ export default function ScreenNumber() {
         buttonText={'SORTEAR'}
         backgroundColor={'#03575C'}
         marginTop={14}
-         click={numero}
+        click={numero}
         width={200}
         height={50}
         marginBottom={20}
@@ -78,25 +72,26 @@ export default function ScreenNumber() {
         buttonText={'SALVAR RESULTADO'}
         backgroundColor={'#03575C'}
         marginTop={14}
-        click={()=>setModalVisible(!modalVisible)}
+        click={() => setModalVisible(!modalVisible)}
         width={200}
         height={50}
       />
-      <Modal visible={modalVisible} animationType="slide"  transparent={true}
-       >
-          <View style={styles.tamModal}>
-        <View style={styles.centralModal}>
-          <TextInput placeholder='Digite o título do sorteio' onChangeText={setTitulo}
-           style={styles.amount} maxLength={25}/>
-          <DefaultButton
-        buttonText={'SALVAR '}
-        backgroundColor={'#03575C'}
-        marginTop={14}
-        click={salvar}
-        width={200}
-        height={50}
-        />
-        </View>
+      
+      <Modal visible={modalVisible} animationType="slide" transparent={true}
+      >
+        <View style={styles.tamModal}>
+          <View style={styles.centralModal}>
+            <TextInput placeholder='Digite o título do sorteio' onChangeText={setTitulo}
+              style={styles.amount} maxLength={25} />
+            <DefaultButton
+              buttonText={'SALVAR '}
+              backgroundColor={'#03575C'}
+              marginTop={14}
+              click={salvar}
+              width={200}
+              height={50}
+            />
+          </View>
         </View>
 
       </Modal>
@@ -127,19 +122,19 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  tamModal:{
+  tamModal: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
   },
-  text:{
+  text: {
     fontSize: 20,
-    fontWeight: "bold", 
+    fontWeight: "bold",
     padding: 15,
     color: "#03575C"
   },
-  amount:{
+  amount: {
     width: "15%",
     alignItems: 'center',
     borderWidth: 2,
