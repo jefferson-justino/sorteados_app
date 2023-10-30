@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput,FlatList,Modal } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Modal, ImageBackground } from 'react-native';
 
 import DefaultButton from '../component/DefaultButton';
 import { useState } from 'react';

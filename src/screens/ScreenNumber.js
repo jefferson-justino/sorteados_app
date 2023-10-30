@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Modal } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Modal, ImageBackground } from 'react-native';
 import { useState } from 'react';
 import DefaultButton from '../component/DefaultButton';
 import sorteioNumero from '../classes/sorteioNumero';//importa as classes

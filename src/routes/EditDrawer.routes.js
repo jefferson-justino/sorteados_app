@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const EditDrawer = (props) => {
   return (
-    <View style={{ flex: 1, backgroundColor: '#03575C' }}>
+    <View style={{ flex: 1, backgroundColor: '#27864F' }}>
       <DrawerContentScrollView {...props}>
           <View style={{ padding: 20, flexDirection: "row", alignItems: 'center' }}>
               <Image
@@ -21,7 +21,7 @@ const EditDrawer = (props) => {
               />
               <Text style={{ color: '#FCFCFC', fontSize: 26}}>Sorteados</Text>
           </View>
-        <View style={{ flex: 1, backgroundColor: '#03575C', paddingTop: 10 }}>
+        <View style={{ flex: 1, backgroundColor: '#27864F', paddingTop: 10 }}>
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>

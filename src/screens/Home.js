@@ -16,14 +16,14 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../Assets/fundo.jpg')}  
+        source={require('../Assets/fundo.png')}  
         resizeMode='cover'
         style={{flex: 1, justifyContent: 'center'}}
       >
 
         <View style={{ alignItems: 'center' }}>
         <Image
-          source={require('../Assets/duende.png')}
+          source={require('../Assets/trevo1.png')}
           style={{width: 200, height: 200}}
         />
         </View>
@@ -76,18 +76,19 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 10,
     padding: 10,
-    paddingBottom: 15,
+    paddingBottom: 12,
     margin: 40,
-    width:'80%'
+    width:'80%',
+    backgroundColor: '#00BF63'
   },
   textHeader: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "bold",
     color: 'white'
   },
   textBody: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "bold",
-    color: 'white'
+    color: 'white',
   }
 });
