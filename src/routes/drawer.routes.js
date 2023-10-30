@@ -2,6 +2,8 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
 import EditDrawer from "./EditDrawer.routes";
 
 import Home from '../screens/Home'
@@ -54,7 +56,7 @@ export default function DrawerRoutes(){
                     headerTitle: 'Sorteio por Número',
                     headerTintColor: '#03575C',
                     headerTitleAlign: 'center',
-                    drawerIcon: ({ color }) => <Ionicons name="list-outline" size={26} color={color} />,
+                    drawerIcon: ({ color }) => <Icon name="numeric" size={26} color={color} />,
                   }}
             />
 

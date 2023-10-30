@@ -10,7 +10,7 @@ const EditDrawer = (props) => {
       <DrawerContentScrollView {...props}>
           <View style={{ padding: 20, flexDirection: "row", alignItems: 'center' }}>
               <Image
-                source={require('../Assets/trevo1.png')}
+                source={require('../Assets/trevo.png')}
                 style={{
                   height: 65,
                   width: 65,
