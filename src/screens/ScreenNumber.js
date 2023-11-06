@@ -56,7 +56,7 @@ export default function ScreenNumber() {
             />
           </View>
         </View>
-        
+
         <View style={styles.center}>
           <DefaultButton
             buttonText={'SORTEAR'}
@@ -68,7 +68,7 @@ export default function ScreenNumber() {
             marginBottom={20}
           />
         </View>
-        
+
         <View style={styles.center}>
           <Text style={styles.text}>{!num ? '' : 'O NúMERO SORTEADOR FOI:'}</Text>
         </View>
@@ -88,9 +88,9 @@ export default function ScreenNumber() {
           />
         </View>
 
-        <Modal 
-          visible={modalVisible} 
-          animationType="slide" 
+        <Modal
+          visible={modalVisible}
+          animationType="slide"
           transparent={true}
         >
           <View style={styles.tamModal}>

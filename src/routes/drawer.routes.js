@@ -37,18 +37,6 @@ export default function DrawerRoutes(){
             />
 
             <Drawer.Screen
-                name="Histórico"
-                component={Historic}
-                options={{
-                    headerStyle: { backgroundColor: '#27864F' },
-                    headerTitle: 'Histórico',
-                    headerTintColor: '#fff',
-                    headerTitleAlign: 'center',
-                    drawerIcon: ({ color }) => <Ionicons name="time-outline" size={26} color={color} />,
-                  }}
-            />
-
-            <Drawer.Screen
                 name="Sorteio por Número"
                 component={ScreenNumber}
                 options={{
@@ -69,6 +57,18 @@ export default function DrawerRoutes(){
                     headerTintColor: '#fff',
                     headerTitleAlign: 'center',
                     drawerIcon: ({ color }) => <Ionicons name="people-outline" size={26} color={color} />,
+                  }}
+            />
+
+            <Drawer.Screen
+                name="Histórico"
+                component={Historic}
+                options={{
+                    headerStyle: { backgroundColor: '#27864F' },
+                    headerTitle: 'Histórico',
+                    headerTintColor: '#fff',
+                    headerTitleAlign: 'center',
+                    drawerIcon: ({ color }) => <Ionicons name="time-outline" size={26} color={color} />,
                   }}
             />
         </Drawer.Navigator>

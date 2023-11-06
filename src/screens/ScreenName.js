@@ -116,7 +116,7 @@ export default function ScreenName() {
 
         <FlatList data={nomes} renderItem={({ item }) => (
           <View style={styles.center}>
-            <Text style={{ fontWeight: "bold", fontSize: 20, color: "#fff"}}>{item}</Text>
+            <Text style={{ fontWeight: "bold", fontSize: 20, color: "#fff" }}>{item}</Text>
           </View>)}
         />
 
@@ -132,9 +132,9 @@ export default function ScreenName() {
           />
         </View>
 
-        <Modal 
-          visible={modalVisible} 
-          animationType="slide" 
+        <Modal
+          visible={modalVisible}
+          animationType="slide"
           transparent={true}
         >
           <View style={styles.tamModal}>
