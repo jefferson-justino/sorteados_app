@@ -107,8 +107,20 @@ export default function ScreenNumber() {
               />
             </View>
           </View>
-
         </Modal>
+
+        <View style={styles.center}>
+          <DefaultButton
+            buttonText={'EXCLUIR'}
+            backgroundColor={'#00BF63'}
+            marginTop={14}
+            // click={() => setModalVisible(!modalVisible)}
+            width={140}
+            height={50}
+            marginBottom={20}
+          />
+        </View>
+        
       </ImageBackground>
     </View>
   );
