@@ -5,9 +5,9 @@ import sorteioNumero from '../classes/sorteioNumero';//importa as classes
 
 export default function ScreenNumber() {
   const [quantidade, setQuantidade] = useState(0) // armazena a quantidade de participantes
-  const [num, setNum] = useState() // armazena o número sorteado
+  const [num, setNum] = useState(0) // armazena o número sorteado
   const [modalVisible, setModalVisible] = useState(false)
-  const [titulo, setTitulo] = useState()
+  const [titulo, setTitulo] = useState('')
   const [dados, setDados] = useState([])
 
   function numero() {
@@ -19,19 +19,31 @@ export default function ScreenNumber() {
     setNum(Math.ceil(Math.random() * quantidade))
 
   }
+  
+  function excluir(){
+    setNum(0)
+    setTitulo('')
+  }
+
+console.log(dados)
 
   function salvar() {
+    if(num==0){
+      alert('Por favor, realize o sorteio corretamente')
+      setModalVisible(!modalVisible)
+      return
+    }
     if (titulo == '') {
       alert('Por favor informe o título')
       return
-    }
+    }else{
     const valor = new sorteioNumero(titulo, num, quantidade)
     const save = [...dados, valor]
     setDados(save)
 
     alert('Salvo!')
     setModalVisible(!modalVisible)
-  }
+  }}
 
   return (
     <View style={styles.container}>
@@ -96,7 +108,7 @@ export default function ScreenNumber() {
           <View style={styles.tamModal}>
             <View style={styles.centralModal}>
               <TextInput placeholder='Digite o título do sorteio' onChangeText={setTitulo}
-                style={styles.amount} maxLength={25} />
+                style={styles.modalInput} maxLength={25} />
               <DefaultButton
                 buttonText={'SALVAR '}
                 backgroundColor={'#00BF63'}
@@ -114,7 +126,7 @@ export default function ScreenNumber() {
             buttonText={'EXCLUIR'}
             backgroundColor={'#00BF63'}
             marginTop={14}
-            // click={() => setModalVisible(!modalVisible)}
+             click={excluir}
             width={140}
             height={50}
             marginBottom={20}
@@ -174,5 +186,14 @@ const styles = StyleSheet.create({
   },
   center: {
     alignItems: "center",
-  }
+  },
+  modalInput: {
+    width: "15%",
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 8,
+    borderColor: "gray",
+    padding: 5,
+    marginBottom: 20,
+  },
 });

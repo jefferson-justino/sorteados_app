@@ -9,21 +9,33 @@ export default function ScreenName() {
   const [nomes, setNomes] = useState([]) // state para armazenar os nomes em um array
   const [sorteado, setSorteado] = useState(-1) // state para armazenar o número que foi sorteado, começa negativo para não dar confitos com o operador ternário
   const [modalVisible, setModalVisible] = useState(false)
-  const [titulo, setTitulo] = useState()
+  const [titulo, setTitulo] = useState('')
   const [dados, setDados] = useState([])
 
+  function excluir(){
+    setSorteado(-1)
+    setTitulo('')
+    setNomes([])
+  }
 
+  console.log(dados)
   function salvar() {
+    if(sorteado<0){
+      alert('Por favor, realize o sorteio corretamente')
+      setModalVisible(!modalVisible)
+      return
+    }
     if (titulo == '') {
       alert('Por favor informe o título')
       return
-    }
+    }else{
     const valor = new sorteioNome(titulo, nomes[sorteado], nomes)
     const save = [...dados, valor]
     setDados(save)
 
     alert('Salvo!')
     setModalVisible(!modalVisible)
+    }
   }
 
 
@@ -140,7 +152,7 @@ export default function ScreenName() {
           <View style={styles.tamModal}>
             <View style={styles.centralModal}>
               <TextInput placeholder='Digite o título do sorteio' onChangeText={setTitulo}
-                style={styles.amount} maxLength={25} />
+                style={styles.modalInput} maxLength={25} />
               <DefaultButton
                 buttonText={'SALVAR '}
                 backgroundColor={'#00BF63'}
@@ -158,7 +170,7 @@ export default function ScreenName() {
             buttonText={'EXCLUIR'}
             backgroundColor={'#00BF63'}
             marginTop={14}
-            // click={() => setModalVisible(!modalVisible)}
+            click={excluir}
             width={140}
             height={50}
             marginBottom={20}
@@ -218,5 +230,14 @@ const styles = StyleSheet.create({
   },
   center: {
     alignItems: "center",
-  }
+  },
+  modalInput: {
+    width: "15%",
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 8,
+    borderColor: "gray",
+    padding: 5,
+    marginBottom: 20,
+  },
 });
