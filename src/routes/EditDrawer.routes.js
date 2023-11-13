@@ -6,11 +6,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const EditDrawer = (props) => {
   return (
-    <View style={{ flex: 1, backgroundColor: '#03575C' }}>
+    <View style={{ flex: 1, backgroundColor: '#27864F' }}>
       <DrawerContentScrollView {...props}>
           <View style={{ padding: 20, flexDirection: "row", alignItems: 'center' }}>
               <Image
-                source={require('../Assets/trevo1.png')}
+                source={require('../Assets/trevo.png')}
                 style={{
                   height: 65,
                   width: 65,
@@ -21,13 +21,13 @@ const EditDrawer = (props) => {
               />
               <Text style={{ color: '#FCFCFC', fontSize: 26}}>Sorteados</Text>
           </View>
-        <View style={{ flex: 1, backgroundColor: '#03575C', paddingTop: 10 }}>
+        <View style={{ flex: 1, backgroundColor: '#27864F', paddingTop: 10 }}>
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
 
       <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#fff' }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 15 }}>
+        {/* <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 15 }}>
           <Ionicons
             name="logo-twitter"
             size={25}
@@ -39,13 +39,13 @@ const EditDrawer = (props) => {
           <Ionicons name="logo-facebook" size={25} color={'#FCFCFC'} />
           <Ionicons name="logo-instagram" size={25} color={'#FCFCFC'} />
           <Ionicons name="logo-github" size={25} color={'#FCFCFC'} />
-        </View>
+        </View> */}
 
         <TouchableOpacity
           onPress={() => {
             props.navigation.navigate;
           }}
-          style={{ paddingVertical: 15 }}
+          style={{ paddingVertical: 10 }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="share-social-outline" size={22} color={'#fff'} />
@@ -53,7 +53,7 @@ const EditDrawer = (props) => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             props.navigation.navigate;
           }}
@@ -62,6 +62,19 @@ const EditDrawer = (props) => {
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="chatbox-ellipses-outline" size={22} color={'#fff'} />
             <Text style={{ color: '#FCFCFC', fontSize: 16, marginLeft: 5 }}>Feedback</Text>
+          </View>
+        </TouchableOpacity> */}
+
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate;
+          }}
+          style={{ paddingVertical: 10 }}>
+          <View >
+          
+            <Text style={{ color: '#FCFCFC', fontSize: 16, marginLeft: 5 }}>Sorteados </Text>
+            <Text style={{ color: '#FCFCFC', fontSize: 16, marginLeft: 5 }}>versão 1.0.0</Text>
+            <Text style={{ color: '#FCFCFC', fontSize: 16, marginLeft: 5, marginTop:10 }}>Desenvolvido por DeVibe</Text>
           </View>
         </TouchableOpacity>
       </View>
